@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+    <style>
+        body {
+            min-height: 100vh;
+            background: #000000;
+            width: 1750px;
+            height: 1100px;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            color: white;
+        }
+        .back {
+            position: absolute;
+            width: 1921px;
+            height: 819px;
+            top: 0px;
+            left: 0px;
+            background: linear-gradient(180deg, #90AEA7 0%, #000000 89.7%);
+        }
+        .back-2 {
+            box-shadow: 0px 6px 32px 6px #00000033;
+            position: absolute;
+            top: 0px;
+            height: 405px;
+            width: 1800px;
+        }
+        .left-sec {
+            width: 230px;
+            height: 85%;
+            background-color: black;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 16px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            overflow: auto;
+            z-index: 1;
+        }
+        .logo {
+            position: absolute;
+            width: 131px;
+            height: 40px;
+            top: 19px;
+            left: 24px;
+        }
+        .div-home {
+            position: absolute;
+            width: 216px;
+            height: 40px;
+            top: 84px;
+            left: 8px;
+            background: #282828;
+            border-radius: 4px;
+        }
+        .img-home {
+            position: absolute;
+            width: 18px;
+            height: 20.02px;
+            left: 16px;
+            top: 8px;
+        }
+        .txt-home {
+            position: absolute;
+            width: 39px;
+            height: 16px;
+            top: 13px;
+            left: 58px;
+            color: #ffffff;
+        }
+        .div-search {
+            position: absolute;
+            width: 216px;
+            height: 40px;
+            top: 124px;
+            left: 8px;
+        }
+        .img-search {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: 8px;
+            left: 16px;
+        }
+        .txt-search {
+            position: absolute;
+            width: 72.88px;
+            height: 30.88px;
+            top: 13px;
+            left: 58px;
+            color: #b3b3b3;
+        }
+        .div-lib {
+            position: absolute;
+            width: 216px;
+            height: 40px;
+            top: 164px;
+            left: 8px;
+        }
+        .img-lib {
+            position: absolute;
+            width: 18.45px;
+            height: 18.01px;
+            top: 8px;
+            left: 16px;
+        }
+        .txt-lib {
+            position: absolute;
+            width: 81px;
+            height: 16px;
+            top: 13px;
+            left: 58px;
+            color: #b3b3b3;
+        }
+        .txt-playlist {
+            position: absolute;
+            width: 72px;
+            height: 16px;
+            top: 228px;
+            left: 24px;
+            color: #b3b3b3;
+        }
+        .div-create {
+            position: absolute;
+            width: 230px;
+            height: 42px;
+            top: 256px;
+        }
+        .bg-plus {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            gap: 0px;
+            opacity: 0.7px;
+            background: #FFFFFF;
+            top: 5px;
+            left: 23px;
+        }
+        .img-create-plus {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            top: 14px;
+            left: 31.5px;
+        }
+        .create-text {
+            position: absolute;
+            width: 100px;
+            height: 16px;
+            top: 12px;
+            left: 71.38px;
+            opacity: 0.7px;
+            color: #b3b3b3;
+        }
+        .div-liked {
+            position: absolute;
+            width: 230px;
+            height: 42px;
+            top: 298px;
+        }
+        .bg-heart {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(139.33deg, #27148F 0%, #605F9E 60.98%, #86979A 93.5%);
+            top: 5px;
+            left: 23px;
+        }
+        .img-heart {
+            position: absolute;
+            width: 13.99px;
+            height: 12.79px;
+            top: 14px;
+            left: 32px;
+        }
+        .liked-text {
+            position: absolute;
+            width: 90px;
+            height: 16px;
+            top: 12px;
+            left: 71.38px;
+            opacity: 0.7px;
+            color: #b3b3b3;
+        }
+        .div-line {
+            position: absolute;
+            width: 184px;
+            height: 1px;
+            top: 348px;
+            left: 24px;
+            background: #282828;
+        }
+        .img-sidebar {
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            top: 750px;
+            background: #C4C4C4;
+        }
+        .down-options {
+            background: #181818;
+            position: fixed;
+            width: 1731px;
+            height: 93px;
+            bottom: 0px;
+            left: -2px;
+            z-index: 2;
+        }
+        .down-artist {
+            position: absolute;
+            width: 219px;
+            height: 60px;
+            top: 21px;
+            left: 15px;
+        }
+        .down-artist img {
+            position: absolute;
+            width: 59px;
+            height: 60px;
+        }
+        .down-artist .icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: 20px;
+            left: 163px;
+        }
+        .down-artist .icon2 {
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            top: 25px;
+            left: 203px;
+        }
+        .down-artist-txt1 {
+            width: 57px;
+            height: 19px;
+            top: 18px;
+            left: 70px;
+            position: absolute;
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: white;
+        }
+        .down-artist-txt2 {
+            width: 71px;
+            height: 15px;
+            opacity: 0.6px;
+            position: absolute;
+            top: 37px;
+            left: 70px;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 15.18px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #B3B3B3;
+        }
+        .main-img {
+            position: absolute;
+            width: 285px;
+            height: 285px;
+            top: 135px;
+            left: 225px;
+        }
+        .txt-pl {
+            position: absolute;
+            width: 57px;
+            height: 16px;
+            top: 185px;
+            left: 490px;
+            font-family: sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 16.44px;
+            letter-spacing: -0.02em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: white;
+        }
+        .spotify-txt {
+            position: absolute;
+            width: 49px;
+            height: 22px;
+            top: 315px;
+            left: 490px;
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 22.03px;
+            letter-spacing: -0.02em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: white;
+        }
+        .ellipse-1 {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            top: 325px;
+            left: 543px;
+            background: #b3b3b3;
+            border-radius: 50%;
+        }
+        .spotify-txt2 {
+            position: absolute;
+            width: 86px;
+            height: 19px;
+            top: 318px;
+            left: 552px;
+            opacity: 0.7px;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18.97px;
+            letter-spacing: -0.02em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #b3b3b3;
+        }
+        .spotify-txt3 {
+            position: absolute;
+            width: 426.21px;
+            height: 21px;
+            top: 295px;
+            left: 490px;
+            gap: 0px;
+            opacity: 0.7px;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 20.57px;
+            letter-spacing: -0.02em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #b3b3b3;
+        }
+        .ellipse-2 {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            top: 325px;
+            left: 627px;
+            background: #b3b3b3;
+            border-radius: 50%;
+        }
+        .spotify-txt4 {
+            position: absolute;
+            width: 156px;
+            height: 19px;
+            top: 318px;
+            left: 637px;
+            gap: 0px;
+            opacity: 0.7px;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18.97px;
+            letter-spacing: -0.02em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #b3b3b3;
+        }
+        .spotify-txt5 {
+            position: absolute;
+            width: 659px;
+            height: 114px;
+            top: 197px;
+            left: 488px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: sans-serif;
+            font-size: 70px;
+            font-weight: 700;
+            line-height: 113.85px;
+            letter-spacing: -0.02em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: white;
+        }
+        .all-txt {
+            position: absolute;
+            top: 40px;
+            left: 7px;
+        }
+        .main-pl2 {
+            position: absolute;
+            width: 1690px;
+            height: 800px;
+            top: 412px;
+            left: 230px;
+            gap: 0px;
+            opacity: 0.15px;
+        }
+        .heart2-img {
+            position: absolute;
+            width: 46px;
+            height: 46px;
+            top: 23px;
+            left: 95px;
+        }
+        .bg-green {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            top: 20px;
+            left: 25px;
+            gap: 0px;
+            border-radius: 687.5px;
+            background: #1DB954;
+        }
+        .pause-btn2 {
+            position: absolute;
+            width: 18px;
+            height: 21px;
+            top: 37px;
+            left: 47px;
+        }
+        .big-ell1 {
+            position: absolute;
+            width: 4.25px;
+            height: 4.25px;
+            top: 46px;
+            left: 161px;
+            background-color: #b3b3b3;
+            border-radius: 50%;
+        }
+        .big-ell2 {
+            position: absolute;
+            width: 4.25px;
+            height: 4.25px;
+            top: 46px;
+            left: 171px;
+            background-color: #b3b3b3;
+            border-radius: 50%;
+        }
+        .big-ell3 {
+            position: absolute;
+            width: 4.25px;
+            height: 4.25px;
+            top: 46px;
+            left: 181px;
+            background-color: #b3b3b3;
+            border-radius: 50%;
+        }
+        .group-16 {
+            position: absolute;
+            width: 1400px;
+            height: 34.16px;
+            top: 505px;
+            left: 255px;
+            gap: 0px;
+            border: 1px;
+        }
+        .group-line {
+            position: absolute;
+            width: 1300px;
+            height: 1px;
+            top: 25px;
+            left: 8px;
+            gap: 0px;
+            border: 1px;
+            opacity: 0.3;
+            background-color: #b3b3b3;
+        }
+        .hash-txt {
+            position: absolute;
+            width: 10.8px;
+            height: 19.65px;
+            top: 17px;
+            left: 1px;
+            gap: 0px;
+            opacity: 0.7px;
+            color: #b3b3b3;
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+        .title-txt {
+            position: absolute;
+            width: 33.3px;
+            height: 15.51px;
+            top: 17px;
+            left: 23px;
+            gap: 0px;
+            opacity: 0.7px;
+            color: #b3b3b3;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+        .album-txt {
+            position: absolute;
+            width: 42.3px;
+            height: 15.51px;
+            top: 17px;
+            left: 530px;
+            gap: 0px;
+            opacity: 0.7px;
+            color: #b3b3b3;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+        .date-txt {
+            position: absolute;
+            width: 78.3px;
+            height: 15.51px;
+            top: 17px;
+            left: 850px;
+            gap: 0px;
+            opacity: 0.7px;
+            color: #b3b3b3;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+        .down-10px {
+            position: absolute;
+            top: 20px;
+        }
+        .pllist-1 {
+            position: absolute;
+            width: 1454px;
+            height: 54px;
+            top: 550px;
+            left: 260px;
+            background: #242726;
+            border-radius: 5px;
+            opacity: 0.1px;
+        }
+        .pllist-2 {
+            position: absolute;
+            width: 1454px;
+            height: 54px;
+            top: 613px;
+            left: 262px;
+            gap: 0px;
+            border-radius: 5px;
+        }
+        .pllist-3 {
+            position: absolute;
+            width: 1454px;
+            height: 54px;
+            top: 676px;
+            left: 262px;
+            border-radius: 5px;
+        }
+        .pllist-4 {
+            position: absolute;
+            width: 1454px;
+            height: 54px;
+            top: 739px;
+            left: 262px;
+            border-radius: 5px;
+        }
+        .pllist-5 {
+            position: absolute;
+            width: 1454px;
+            height: 54px;
+            top: 802px;
+            left: 262px;
+            border-radius: 5px;
+        }
+        .pllist-6 {
+            position: absolute;
+            width: 1454px;
+            height: 54px;
+            top: 865px;
+            left: 262px;
+            border-radius: 5px;
+        }
+        .pllist-7 {
+            position: absolute;
+            width: 1454px;
+            height: 54px;
+            top: 928px;
+            left: 262px;
+            border-radius: 5px;
+        }
+        .pl1-arr1 {
+            position: absolute;
+            width: 10px;
+            height: 12.54px;
+            top: 20px;
+            left: 20px;
+            gap: 0px;
+            opacity: 0px;
+            color: #b3b3b3;
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+        .pl1-img1 {
+            position: absolute;
+            width: 35.62px;
+            height: 40px;
+            top: 7px;
+            left: 43.63px;
+        }
+        .pl1-txt1 {
+            position: absolute;
+            width: 80px;
+            height: 19px;
+            top: 13px;
+            left: 93.49px;
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: white;
+        }
+        .pl1-txt2 {
+            position: absolute;
+            width: 80px;
+            height: 18px;
+            top: 30px;
+            left: 93.49px;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: white;
+        }
+        .pl1-txt3 {
+            position: absolute;
+            width: 228.83px;
+            height: 18px;
+            top: 18px;
+            left: 450px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: white;
+        }
+        .pl1-txt4 {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            top: 16px;
+            left: 860px;
+            gap: 0px;
+            opacity: 0.7px;
+            font-family: sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #b3b3b3;
+        }
+        .pl1-txt5 {
+            top: 20px;
+            left: 1225px;
+            position: absolute;
+            width: 26.71px;
+            height: 19px;
+            gap: 0px;
+            opacity: 0.7px;
+            font-family: sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #b3b3b3;
+        }
+        .heart2img {
+            position: absolute;
+            width: 21.37px;
+            height: 24px;
+            top: 16px;
+            left: 1190px;
+            z-index: 1;
+        }
+        .moreimg {
+            position: absolute;
+            width: 21.37px;
+            height: 24px;
+            top: 16px;
+            left: 1265px;
+            z-index: 1;
+        }
+        .music-player {
+            position: absolute;
+            width: 742.28px;
+            height: 63.19px;
+            top: 10px;
+            left: 390px;
+        }
+        .pause-btn {
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            left: 325px;
+            top: 10px;
+        }
+        .skip-prev {
+            position: absolute;
+            width: 31px;
+            height: 31px;
+            top: 12px;
+            left: 275px;
+        }
+        .skip-next {
+            position: absolute;
+            width: 31px;
+            height: 31px;
+            top: 12px;
+            left: 380px;
+        }
+        .arrow-repeat {
+            position: absolute;
+            width: 31px;
+            height: 31px;
+            top: 12px;
+            left: 425px;
+        }
+        .music-shuffle {
+            position: absolute;
+            width: 31px;
+            height: 31px;
+            top: 12px;
+            left: 230px;
+        }
+        .list-1 {
+            position: absolute;
+            top: 4px;
+            left: 30px;
+        }
+        .line {
+            position: absolute;
+            width: 673.85px;
+            height: 4.55px;
+            top: 68px;
+            left: 35px;
+            border-radius: 2.27px;
+            background: #B3B3B3;
+        }
+        .list2-txt1 {
+            position: absolute;
+            width: 31px;
+            height: 19px;
+            top: 62px;
+            left: 4px;
+            font-family: sans-serif;
+            font-size: 12.5px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #b3b3b3;
+        }
+        .list2-txt2 {
+            position: absolute;
+            width: 31px;
+            height: 19px;
+            top: 62px;
+            left: 710px;
+            font-family: sans-serif;
+            font-size: 12.5px;
+            font-weight: 400;
+            line-height: 18.19px;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #b3b3b3;
+        }
+        .down-right {
+            position: absolute;
+            width: 193px;
+            height: 25px;
+            top: 40px;
+            left: 1290px;
+            border: 1px;
+        }
+        .carbon-query {
+            position: absolute;
+            width: 16px;
+            height: 12px;
+            top: 7px;
+            left: 1px;
+            border: 1px;
+        }
+        .carbon-laptop {
+            position: absolute;
+            width: 16.65px;
+            height: 13px;
+            top: 8px;
+            left: 35px;
+            border-radius: 1px;
+        }
+        .down-right-line {
+            position: absolute;
+            width: 97px;
+            height: 4px;
+            top: 12px;
+            left: 92px;
+            border-radius: 38px;
+            background: #C4C4C4;
+        }
+        .speaker {
+            position: absolute;
+            width: 15.86px;
+            height: 13.79px;
+            top: 7px;
+            left: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="back"></div>
+    <div class="back-2"></div>
+
+    <div class="left-sec">
+        <div class="logo">
+            <img src="logo.png" />
+        </div>
+        <a href="Spotify_home.html">
+            <div class="div-home">
+                <span>
+                    <span class="img-home"><img src="Frame.png" /></span>
+                    <span class="txt-home">Home</span>
+                </span>
+            </div>
+        </a>
+        <div class="div-search">
+            <span>
+                <span class="img-search"><img src="Frame-2.png" /></span>
+                <span class="txt-search">Search</span>
+            </span>
+        </div>
+        <div class="div-lib">
+            <span>
+                <span class="img-lib"><img src="Frame-3.png" /></span>
+                <span class="txt-lib">Library</span>
+            </span>
+        </div>
+        <div class="txt-playlist">Playlists</div>
+        <div class="div-create">
+            <span class="bg-plus"></span>
+            <img class="img-create-plus" src="Vector.png" />
+            <span class="create-text">Create Playlist</span>
+        </div>
+        <div class="div-liked">
+            <span class="bg-heart"></span>
+            <span class="img-heart"><img src="Vector-2.png" /></span>
+            <span class="liked-text">Liked Songs</span>
+        </div>
+        <div class="div-line"></div>
+        <img class="img-sidebar" src="album art.png" />
+    </div>
+
+    <div class="right-sec">
+        <div class="main-pl">
+            <img src="ßäëßà│ßäÅßà│ßäàßà╡ßå½ßäëßàúßå║ 2021-03-16 ßäïßà⌐ßäÆßà« 4.04 2.png" class="main-img" />
+            <div class="all-txt">
+                <div class="txt-pl">PLAYLIST</div>
+                <span class="spotify-txt5">Pop Right Now</span>
+                <span class="spotify-txt3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus</span>
+                <span class="spotify-txt">Spotify</span>
+                <span class="ellipse-1"></span>
+                <span class="spotify-txt2">860,305 likes</span>
+                <span class="ellipse-2"></span>
+                <span class="spotify-txt4">100 songs, 5 hr 5 min</span>
+            </div>
+        </div>
+        <div class="main-pl2">
+            <span class="bg-green"></span><span><img class="pause-btn2" src="Vector 2.png" /></span>
+            <img class="heart2-img" src="heart2.png" />
+            <span class="big-ell1"></span>
+            <span class="big-ell2"></span>
+            <span class="big-ell3"></span>
+        </div>
+        <div class="down-10px">
+            <div class="group-16">
+                <div class="group-line"></div>
+                <span class="hash-txt">#</span>
+                <span class="title-txt">TITLE</span>
+                <span class="album-txt">ALBUM</span>
+                <span class="date-txt">DATE ADDED</span>
+            </div>
+            <div class="pllist-1">
+                <img class="pl1-arr1" src="Polygon 2.png" />
+                <img class="pl1-img1" src="Rectangle99.png" />
+                <img class="heart2img" src="heart-2.png" /><img class="moreimg" src="more-2.png" />
+                <span class="pl1-txt1">We’re Good</span><span class="pl1-txt2">Dua Lipa</span>
+                <span class="pl1-txt3">Future Nostalgia (The Moonlight Edition)</span>
+                <span class="pl1-txt4">4일 전</span>
+                <span class="pl1-txt5">2:45</span>
+            </div>
+            <div class="pllist-2">
+                <span class="pl1-arr1">2</span>
+                <img class="pl1-img1" src="Rectangle20.png" />
+                <img class="moreimg" src="more-2.png" />
+                <span class="pl1-txt1">We’re Good</span><span class="pl1-txt2">Dua Lipa</span>
+                <span class="pl1-txt3">Future Nostalgia (The Moonlight Edition)</span>
+                <span class="pl1-txt4">4일 전</span>
+                <span class="pl1-txt5">2:45</span>
+            </div>
+            <div class="pllist-3">
+                <span class="pl1-arr1">3</span>
+                <img class="pl1-img1" src="Rectangle20.png" />
+                <img class="moreimg" src="more-2.png" />
+                <span class="pl1-txt1">We’re Good</span><span class="pl1-txt2">Dua Lipa</span>
+                <span class="pl1-txt3">Future Nostalgia (The Moonlight Edition)</span>
+                <span class="pl1-txt4">4일 전</span>
+                <span class="pl1-txt5">2:45</span>
+            </div>
+            <div class="pllist-4">
+                <span class="pl1-arr1">4</span>
+                <img class="pl1-img1" src="Rectangle20.png" />
+                <img class="moreimg" src="more-2.png" />
+                <span class="pl1-txt1">We’re Good</span><span class="pl1-txt2">Dua Lipa</span>
+                <span class="pl1-txt3">Future Nostalgia (The Moonlight Edition)</span>
+                <span class="pl1-txt4">4일 전</span>
+                <span class="pl1-txt5">2:45</span>
+            </div>
+            <div class="pllist-5">
+                <span class="pl1-arr1">5</span>
+                <img class="pl1-img1" src="Rectangle20.png" />
+                <img class="moreimg" src="more-2.png" />
+                <span class="pl1-txt1">We’re Good</span><span class="pl1-txt2">Dua Lipa</span>
+                <span class="pl1-txt3">Future Nostalgia (The Moonlight Edition)</span>
+                <span class="pl1-txt4">4일 전</span>
+                <span class="pl1-txt5">2:45</span>
+            </div>
+            <div class="pllist-6">
+                <span class="pl1-arr1">6</span>
+                <img class="pl1-img1" src="Rectangle20.png" />
+                <img class="moreimg" src="more-2.png" />
+                <span class="pl1-txt1">We’re Good</span><span class="pl1-txt2">Dua Lipa</span>
+                <span class="pl1-txt3">Future Nostalgia (The Moonlight Edition)</span>
+                <span class="pl1-txt4">4일 전</span>
+                <span class="pl1-txt5">2:45</span>
+            </div>
+            <div class="pllist-7">
+                <span class="pl1-arr1">7</span>
+                <img class="pl1-img1" src="Rectangle20.png" />
+                <img class="moreimg" src="more-2.png" />
+                <span class="pl1-txt1">We’re Good</span><span class="pl1-txt2">Dua Lipa</span>
+                <span class="pl1-txt3">Future Nostalgia (The Moonlight Edition)</span>
+                <span class="pl1-txt4">4일 전</span>
+                <span class="pl1-txt5">2:45</span>
+            </div>
+        </div>
+        <div class="down-options">
+            <div class="down-artist">
+                <img src="Rectangle 9-2.png" />
+                <span class="down-artist-txt1">Hold On</span>
+                <span class="down-artist-txt2">Justin Bieber</span>
+                <img class="icon" src="heart.png" />
+                <img class="icon2" src="Group 3.png" />
+            </div>
+            <div class="down-right">
+                <img class="carbon-query" src="Group11.png" />
+                <img class="carbon-laptop" src="Group12.png" />
+                <img class="speaker" src="Vector13.png" />
+                <div class="down-right-line"></div>
+            </div>
+            <div class="music-player">
+                <div class="list-1">
+                    <img class="skip-prev" src="back.png" />
+                    <img class="skip-next" src="forward.png" />
+                    <span class="circle"></span>
+                    <img class="pause-btn" src="play.png" />
+                    <img class="arrow-repeat" src="repeat.png" />
+                    <img class="music-shuffle" src="shuffle.png" />
+                </div>
+                <div class="list-2">
+                    <span class="list2-txt1">0:00</span>
+                    <div class="line"></div>
+                    <span class="list2-txt2">2:50</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Homepage</title>
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #222222 0%, #1F1F1F 11.64%, #171717 25.66%, #161616 32.94%, #151515 35.98%, #131313 44.89%, #121212 55.22%, #121212 75.34%, #121212 85.45%, rgba(18, 18, 18, 0) 100%);
+            width: 1750px;
+            height: 1110px;
+            margin: 0;
+            font-family: sans-serif;
+            color: white;
+        }
+
+        .left-sec {
+            background-color: black;
+            height: 87%;
+            width: 371.8px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            color: white;
+            font-family: sans-serif;
+            font-size: 19px;
+            font-weight: 700;
+            letter-spacing: -0.0525em;
+            text-align: left;
+            overflow: auto;
+            z-index: 1;
+        }
+
+        .logo {
+            position: absolute;
+            top: 39.29px;
+            left: 60px;
+            width: 202.58px;
+            height: 60.53px;
+        }
+
+        .left-options-top {
+            position: absolute;
+            width: 347.1px;
+            height: 170.46px;
+            top: 138.11px;
+            left: 12.35px;
+        }
+
+        .img-home, .img-search, .img-lib {
+            position: absolute;
+            width: 29.65px;
+            height: 32.12px;
+            left: 60px;
+        }
+
+        .img-search {
+            top: 60px;
+            height: 29.65px;
+        }
+
+        .img-lib {
+            top: 120px;
+            width: 27.7px;
+            height: 28.41px;
+            left: 65px;
+        }
+
+        .txt-home, .txt-search, .txt-lib {
+            position: absolute;
+            color: white;
+            left: 125px;
+        }
+
+        .txt-home {
+            top: 10px;
+        }
+
+        .txt-search {
+            top: 65px;
+        }
+
+        .txt-lib {
+            top: 125px;
+        }
+
+        .left-options-middle {
+            position: absolute;
+            width: 209.99px;
+            height: 160.58px;
+            top: 372.8px;
+            left: 37.06px;
+            line-height: 30px;
+        }
+
+        .img-create-sq, .img-heart, .img-green-rec {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            left: 40.76px;
+        }
+
+        .img-create-plus {
+            position: absolute;
+            width: 14.82px;
+            height: 14.82px;
+            top: 10px;
+            left: 50px;
+        }
+
+        .img-heart {
+            top: 60px;
+        }
+
+        .img-green-rec {
+            top: 120px;
+        }
+
+        .img-green-inside {
+            position: absolute;
+            width: 21px;
+            height: 21px;
+            top: 127px;
+            left: 44px;
+        }
+
+        .create-text, .liked-text, .ep-text {
+            position: absolute;
+            left: 98.82px;
+        }
+
+        .create-text {
+            top: 0;
+        }
+
+        .liked-text {
+            top: 60px;
+        }
+
+        .ep-text {
+            top: 120px;
+        }
+
+        .left-playlists {
+            position: absolute;
+            width: 213.69px;
+            height: 277.92px;
+            top: 580.32px;
+            left: 37.06px;
+            line-height: 80px;
+        }
+
+        .fav, .dm1, .discover, .malayalam, .dance, .edm {
+            position: absolute;
+            left: 37.06px;
+        }
+
+        .fav {
+            top: 0;
+        }
+
+        .dm1 {
+            top: 40px;
+        }
+
+        .discover {
+            top: 80px;
+        }
+
+        .malayalam {
+            top: 120px;
+        }
+
+        .dance {
+            top: 160px;
+        }
+
+        .edm {
+            top: 200px;
+        }
+
+        .install-app {
+            position: absolute;
+            width: 170.46px;
+            height: 30.88px;
+            top: 936.06px;
+            left: 37.06px;
+        }
+
+        .install-app-text {
+            position: absolute;
+            left: 98.82px;
+            top: 2px;
+        }
+
+        .install-app-img {
+            position: absolute;
+            width: 29.65px;
+            height: 29.65px;
+            left: 37.06px;
+        }
+
+        .ell1, .ell2 {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 20px;
+        }
+
+        .ell1 {
+            left: 381px;
+        }
+
+        .ell2 {
+            left: 441px;
+        }
+
+        .left-img, .right-img {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: 28px;
+        }
+
+        .left-img {
+            left: 389px;
+        }
+
+        .right-img {
+            left: 449px;
+        }
+
+        .user {
+            position: relative;
+            width: 147px;
+            height: 41px;
+            top: 16px;
+            left: 1563px;
+            border-radius: 33px;
+            background-color: black;
+        }
+
+        .ell3 {
+            position: absolute;
+            width: 37px;
+            height: 37px;
+            top: 2px;
+        }
+
+        .txt-user {
+            position: absolute;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 26.04px;
+            letter-spacing: -0.02em;
+            color: white;
+            width: 75px;
+            height: 31px;
+            top: 10px;
+            left: 55px;
+        }
+
+        .img-user-arrow {
+            position: absolute;
+            width: 21px;
+            height: 24px;
+            top: 10px;
+            left: 120px;
+        }
+
+        .tplusp {
+            position: absolute;
+            width: 1147px;
+            height: 294px;
+            top: 112px;
+            left: 419px;
+        }
+
+        .gm-text {
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 49.48px;
+            letter-spacing: -0.03em;
+            width: 280px;
+            height: 56px;
+            color: white;
+        }
+
+        .liked-songs, .netflix, .kda, .dance2 {
+            position: absolute;
+            width: 362px;
+            height: 100px;
+            background-color: #303030;
+            border-radius: 4px;
+        }
+
+        .netflix {
+            left: 400px;
+        }
+
+        .kda {
+            left: 800px;
+        }
+
+        .dance2 {
+            top: 180px;
+        }
+
+        .purple {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 4px;
+            background: linear-gradient(135deg, #4000F4 0%, #603AED 22.48%, #7C6EE6 46.93%, #979FE1 65.71%, #A2B3DE 77.68%, #ADC8DC 88.93%, #C0ECD7 100%);
+        }
+
+        .netflix img, .kda img, .dance2 img {
+            width: 100px;
+            height: 100px;
+            border-radius: 4px;
+        }
+
+        .liked-songs-txt, .netflix-txt, .kda-txt, .dance2-txt {
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 26.04px;
+            letter-spacing: -0.02em;
+        }
+
+        .liked-songs-txt {
+            margin-left: 135px;
+            margin-top: 37px;
+        }
+
+        .netflix-txt {
+            margin-left: 30px;
+            margin-top: 37px;
+        }
+
+        .kda-txt {
+            margin-left: 30px;
+            margin-top: 37px;
+        }
+
+        .dance2-txt {
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        .heart {
+            position: absolute;
+            width: 29px;
+            height: 29px;
+            top: 206px;
+            left: 455px;
+        }
+
+        .see-all {
+            position: absolute;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 22.13px;
+            letter-spacing: 0.04em;
+            width: 100px;
+            height: 22px;
+            top: 445px;
+            color: #B3B3B3;
+            left: 1611px;
+        }
+
+        .dance-txt-image {
+            position: absolute;
+            font-size: 8.32px;
+            font-weight: 700;
+            line-height: 7px;
+            letter-spacing: -0.02em;
+            width: 75.31px;
+            height: 14px;
+            top: 370px;
+            left: 434px;
+            color: white;
+        }
+
+        .shows {
+            position: absolute;
+            width: 1103.07px;
+            height: 664px;
+            top: 438px;
+            left: 419px;
+        }
+
+        .txt-shows {
+            font-size: 29px;
+            font-weight: 700;
+            line-height: 37.76px;
+            letter-spacing: -0.04em;
+            width: 304.6px;
+            height: 60.96px;
+            color: white;
+        }
+
+        .artist-1, .artist-2, .artist-3, .artist-4, .artist-5, .artist-6, .artist-7, .artist-8 {
+            position: absolute;
+            width: 251.29px;
+            height: 310px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2275) 26.44%);
+        }
+
+        .artist-2 {
+            left: 280px;
+        }
+
+        .artist-3 {
+            left: 560px;
+        }
+
+        .artist-4 {
+            left: 840px;
+        }
+
+        .artist-5, .artist-6, .artist-7, .artist-8 {
+            top: 405px;
+            height: 240px;
+        }
+
+        .artist-6 {
+            left: 280px;
+        }
+
+        .artist-7 {
+            left: 560px;
+        }
+
+        .artist-8 {
+            left: 840px;
+        }
+
+        .artist-1 img, .artist-2 img, .artist-3 img, .artist-4 img, .artist-5 img, .artist-6 img, .artist-7 img, .artist-8 img {
+            width: 207.78px;
+            height: 207.93px;
+            margin: 20px;
+            border-radius: 14px;
+        }
+
+        .art1-txt1, .art2-txt1, .art3-txt1, .art4-txt1 {
+            position: absolute;
+            font-size: 21px;
+            font-weight: 500;
+            line-height: 27.34px;
+            letter-spacing: -0.02em;
+            width: 211.04px;
+            height: 27.22px;
+            top: 260px;
+            left: 25px;
+        }
+
+        .art1-txt2, .art2-txt2, .art3-txt2, .art4-txt2 {
+            position: absolute;
+            width: 104.43px;
+            height: 21.77px;
+            top: 294px;
+            left: 25px;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 19.53px;
+            letter-spacing: 0.01em;
+            color: #B3B3B3;
+        }
+
+        .down-options {
+            border-width: 0px;
+            border-style: solid;
+            background-color: #282828;
+            width: 1728px;
+            height: 112px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .down-artist {
+            position: absolute;
+            width: 224.88px;
+            height: 70px;
+            top: 20px;
+            left: 50px;
+        }
+
+        .down-artist img {
+            width: 62.97px;
+            height: 70px;
+        }
+
+        .down-artist .icon {
+            position: absolute;
+            width: 21.59px;
+            height: 24px;
+            top: 25px;
+            left: 204px;
+        }
+
+        .down-artist-txt1 {
+            position: absolute;
+            width: 109.74px;
+            height: 19px;
+            top: 16px;
+            left: 80px;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 23.44px;
+            letter-spacing: -0.05em;
+            color: white;
+        }
+
+        .down-artist-txt2 {
+            position: absolute;
+            width: 109.74px;
+            height: 19px;
+            top: 37px;
+            left: 80px;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 19.53px;
+            letter-spacing: -0.05em;
+            color: #B3B3B3;
+        }
+
+        .down-right {
+            position: absolute;
+            width: 270.76px;
+            height: 32px;
+            left: 1210px;
+            top: 35px;
+        }
+
+        .microphone, .carbon-query, .carbon-laptop, .speaker, .right-arrow {
+            position: absolute;
+        }
+
+        .microphone {
+            width: 17.19px;
+            height: 18.91px;
+            top: 9px;
+            left: -3px;
+        }
+
+        .carbon-query {
+            width: 28.79px;
+            height: 32px;
+            left: 22px;
+        }
+
+        .carbon-laptop {
+            width: 21.59px;
+            height: 24px;
+            top: 7px;
+            left: 65px;
+        }
+
+        .speaker {
+            width: 21.59px;
+            height: 24px;
+            top: 7px;
+            left: 100px;
+        }
+
+        .right-arrow {
+            width: 21.59px;
+            height: 24px;
+            left: 250px;
+            top: 7px;
+        }
+
+        .down-right-line {
+            position: absolute;
+            width: 104.35px;
+            height: 5px;
+            left: 135px;
+            top: 17px;
+            border-radius: 2.5px;
+            background: #C4C4C4;
+        }
+
+        .listen {
+            position: absolute;
+            width: 1728px;
+            height: 30px;
+            top: 1087px;
+            background: #1ED760;
+            left: 0;
+        }
+
+        .listen-txt {
+            position: absolute;
+            width: 280.5px;
+            height: 24px;
+            top: 4px;
+            left: 1375px;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 22.13px;
+            color: black;
+        }
+
+        .speaker2 {
+            position: absolute;
+            width: 16.2px;
+            height: 18px;
+            top: 6px;
+            left: 1355px;
+        }
+
+        .green-arrow {
+            position: absolute;
+            width: 19.8px;
+            height: 11px;
+            top: 1076px;
+            left: 1500px;
+        }
+
+        .music-player {
+            position: absolute;
+            width: 704px;
+            height: 80px;
+            top: 15px;
+            left: 405px;
+        }
+
+        .pause-btn, .skip-prev, .skip-next, .arrow-repeat, .music-shuffle {
+            position: absolute;
+        }
+
+        .pause-btn {
+            width: 51px;
+            height: 51px;
+            left: 325px;
+        }
+
+        .skip-prev {
+            width: 31px;
+            height: 31px;
+            top: 10px;
+            left: 275px;
+        }
+
+        .skip-next {
+            width: 31px;
+            height: 31px;
+            top: 10px;
+            left: 390px;
+        }
+
+        .arrow-repeat {
+            width: 22px;
+            height: 22px;
+            top: 15px;
+            left: 440px;
+        }
+
+        .music-shuffle {
+            width: 24px;
+            height: 24px;
+            top: 15px;
+            left: 235px;
+        }
+
+        .list-1 {
+            position: absolute;
+            top: 4px;
+        }
+
+        .left-line, .right-line {
+            position: absolute;
+            width: 640px;
+            height: 5px;
+            top: 70px;
+            left: 30px;
+            border-radius: 2.5px;
+        }
+
+        .left-line {
+            background: #535353;
+        }
+
+        .right-line {
+            width: 511px;
+            background: #c4c4c4;
+        }
+
+        .list2-txt1, .list2-txt2 {
+            position: absolute;
+            width: 31px;
+            height: 19px;
+            top: 63px;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18.23px;
+            letter-spacing: 0.04em;
+            color: #C4C4C4;
+        }
+
+        .list2-txt1 {
+            left: -2px;
+        }
+
+        .list2-txt2 {
+            left: 675px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left-sec">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+
+        <div class="left-options-top">
+            <a href="Spotify_home.html">
+                <div>
+                    <span>
+                        <span class="img-home"><img src="fi-ss-home.png" alt="Home"></span>
+                        <span class="txt-home">Home</span>
+                    </span>
+                </div>
+            </a>
+            <div>
+                <span>
+                    <span class="img-search"><img src="fi-rs-search.png" alt="Search"></span>
+                    <span class="txt-search">Search</span>
+                </span>
+            </div>
+            <div>
+                <span>
+                    <span class="img-lib"><img src="library.png" alt="Library"></span>
+                    <span class="txt-lib">Library</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="left-options-middle">
+            <div>
+                <img class="img-create-sq" src="Rectangle 9.png" alt="Create Square"><img class="img-create-plus" src="fi-ss-plus-small.png" alt="Create Plus">
+                <span class="create-text">Create Playlist</span>
+            </div>
+            <div>
+                <span class="img-heart"><img src="Group 2.png" alt="Heart"></span>
+                <span class="liked-text">Liked Songs</span>
+            </div>
+            <div>
+                <img class="img-green-rec" src="Rectangle 10.png" alt="Green Rectangle"><img class="img-green-inside" src="gg_media-podcast.png" alt="Green Inside">
+                <span class="ep-text">Your Episodes</span>
+            </div>
+        </div>
+
+        <div class="left-playlists">
+            <div class="fav">FAV</div>
+            <div class="dm1">Daily Mix 1</div>
+            <div class="discover">Discover Weekly</div>
+            <div class="malayalam">Malayalam</div>
+            <div class="dance">Dance / Electronix Mix</div>
+            <div class="edm">EDM / Popular</div>
+        </div>
+
+        <div class="install-app">
+            <span class="install-app-img"><img src="grommet-icons_install-option.png" alt="Install App"></span>
+            <span class="install-app-text">Install App</span>
+        </div>
+    </div>
+
+    <div class="nav-btn">
+        <img class="ell1" src="Ellipse 1.png" alt="Ellipse 1">
+        <img class="ell2" src="Ellipse 2.png" alt="Ellipse 2">
+        <img class="left-img" src="fi-rr-angle-small-left.png" alt="Left Arrow">
+        <img class="right-img" src="fi-rr-angle-small-right.png" alt="Right Arrow">
+    </div>
+
+    <div class="user">
+        <img src="Ellipse 3.png" class="ell3" alt="User">
+        <span class="txt-user">Angel</span>
+        <img class="img-user-arrow" src="fi-ss-caret-down.png" alt="User Arrow">
+    </div>
+
+    <div class="tplusp">
+        <div class="gm-text">Good Morning</div>
+        <div class="liked-songs">
+            <span class="purple"></span>
+            <span class="liked-songs-txt">Liked Songs</span>
+        </div>
+        <div class="netflix">
+            <img src="Group 1 3.png" alt="Netflix Playlist"><span class="netflix-txt">Neffex Playlist</span>
+        </div>
+        <div class="kda">
+            <img src="Group 1 2.png" alt="KDA"><span class="kda-txt">K/ DA</span>
+        </div>
+        <div class="dance2">
+            <img src="Group 1.png" alt="Dance"><span class="dance2-txt">Dance / Electronic Mix</span>
+        </div>
+    </div>
+    <img class="heart" src="fi-ss-heart.png" alt="Heart">
+
+    <div class="shows">
+        <div class="txt-shows">Shows you might like</div>
+        <span class="artist-1">
+            <img src="Rectangle 16.png" alt="Artist 1"><span class="art1-txt1">Weekly Motivatio...</span><span class="art1-txt2">Ben Ina Scott</span>
+        </span>
+        <span class="artist-2">
+            <img src="Rectangle 16-2.png" alt="Artist 2"><span class="art2-txt1">MEDITATION SELF</span><span class="art2-txt2">Ibn Hussain Aleen</span>
+        </span>
+        <div class="artist-3">
+            <img src="Rectangle 16-3.png" alt="Artist 3"><span class="art3-txt1">Words beyond act...</span><span class="art3-txt2">Samuel Scott</span>
+        </div>
+        <div class="artist-4">
+            <img src="Rectangle 16-4.png" alt="Artist 4"><span class="art4-txt1">The Alexa Show</span><span class="art4-txt2">Adriana Tom</span>
+        </div>
+        <div class="artist-5">
+            <img src="Rectangle 16-5.png" alt="Artist 5">
+        </div>
+        <div class="artist-6">
+            <img src="Rectangle 16-5.png" alt="Artist 6">
+        </div>
+        <div class="artist-7">
+            <img src="Rectangle 16-5.png" alt="Artist 7">
+        </div>
+        <div class="artist-8">
+            <img src="Rectangle 16-5.png" alt="Artist 8">
+        </div>
+    </div>
+
+    <div class="see-all">SEE ALL</div>
+
+    <span class="dance-txt-image">Dance / Electronic Mix</span>
+
+    <div class="down-options">
+        <div class="down-artist">
+            <img src="Rectangle 20.png" alt="Dreaming On">
+            <span class="down-artist-txt1">Dreaming On</span>
+            <span class="down-artist-txt2">NEFFEX</span>
+            <img class="icon" src="bx_bxs-heart.png" alt="Heart Icon">
+        </div>
+        <div class="down-right">
+            <img class="microphone" src="ph_microphone-stage.png" alt="Microphone">
+            <img class="carbon-query" src="carbon_query-queue.png" alt="Query Queue">
+            <img class="carbon-laptop" src="carbon_laptop.png" alt="Laptop">
+            <img class="speaker" src="fluent_speaker-2-24-regular.png" alt="Speaker">
+            <div class="down-right-line"></div>
+            <img class="right-arrow" src="tabler_arrows-diagonal.png" alt="Right Arrow">
+        </div>
+
+        <div class="music-player">
+            <div class="list-1">
+                <img class="skip-prev" src="bx_bx-skip-previous-2.png" alt="Skip Previous">
+                <img class="skip-next" src="bx_bx-skip-previous.png" alt="Skip Next">
+                <img class="pause-btn" src="gridicons_play.png" alt="Pause">
+                <img class="arrow-repeat" src="fluent_arrow-repeat-all-20-regular.png" alt="Repeat">
+                <img class="music-shuffle" src="raphael_shuffle.png" alt="Shuffle">
+            </div>
+            <div class="list-2">
+                <span class="list2-txt1">2:11</span>
+                <div class="left-line"></div>
+                <div class="right-line"></div>
+                <span class="list2-txt2">2:42</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
